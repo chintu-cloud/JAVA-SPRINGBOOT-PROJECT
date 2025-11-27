@@ -205,11 +205,11 @@ mv <filename> /root
   ```
 
 2. Create **systemd service**:
----
-   ```bash
+
+   ```
    vi /etc/systemd/system/frontend.service
    ```
----
+
    Add the following: (/etc/systemd/system/frontend.service --> inside enter below code)
    ```ini
    [Unit]
