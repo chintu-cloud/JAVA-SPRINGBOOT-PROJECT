@@ -63,6 +63,7 @@ Launch **two EC2 instances**:
    ```
 ----
 📌 Note:
+
 Move the JAR file to the root directory using this command:
  ```
 mv <filename> /root
