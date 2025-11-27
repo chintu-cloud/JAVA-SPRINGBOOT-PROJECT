@@ -146,27 +146,94 @@ Launch **two EC2 instances**:
 ---
 
 ## ⚙️ Step 3: Setup Backend (Spring Boot)
-1. Connect to **Backend EC2**:
-   ```bash
 
-          sudo su -
-          yum install git -y    
-          git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git   
-          yum install maven -y   
-          ls   
-          cd Java-springboot-project    
-          ls     
-          mvn clean package -Dspring.profiles.active=build       
-          ls       
-          cd target    
-          ls   
-          mv datastore-0.0.7.jar /root             ## move to root directory using this command :  mv <filename> /root
-          cd ..
-          cd ..        
-          ls
-       
+---
 
-   ```
+# 🚀 Backend EC2 Setup Guide (JAVA-SPRINGBOOT-PROJECT)
+
+## 1️⃣ Connect to **Backend EC2**:
+```bash
+sudo su -
+```
+- Switch to the root user for full permissions.  
+- ⚠️ **Note:** Always ensure you’re on the correct EC2 instance (backend server).
+
+---
+
+## 2️⃣ Install Git
+```bash
+yum install git -y
+```
+- Installs Git for cloning repositories.  
+- `-y` auto-confirms installation.
+
+---
+
+## 3️⃣ Clone the Project Repository
+```bash
+git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
+```
+- Clones the Spring Boot project into your EC2 instance.  
+- ⚠️ **Reminder:** Verify repo URL is correct and accessible.
+
+---
+
+## 4️⃣ Install Maven
+```bash
+yum install maven -y
+```
+- Installs Apache Maven for building the project.  
+- ⚠️ **Tip:** Run `mvn -v` to confirm installation.
+
+---
+
+## 5️⃣ Navigate into Project Directory
+```bash
+ls
+cd Java-springboot-project
+ls
+```
+- `ls` helps confirm the folder exists before entering.  
+- ⚠️ **Pitfall:** Directory name is case-sensitive (`Java-springboot-project`).
+
+---
+
+## 6️⃣ Build the Project
+```bash
+mvn clean package -Dspring.profiles.active=build
+```
+- Cleans old builds and packages the project using the `build` profile.  
+- ⚠️ **Note:** Ensure `pom.xml` has the correct profile defined.
+
+---
+
+## 7️⃣ Navigate to Target Directory
+```bash
+ls
+cd target
+ls
+```
+- The compiled `.jar` file will be inside `target/`.
+
+---
+
+## 8️⃣ Move JAR File to Root Directory
+```bash
+mv datastore-0.0.7.jar /root
+```
+- Moves the packaged JAR to `/root` for easy access.  
+- ⚠️ **Reminder:** Replace `datastore-0.0.7.jar` with the actual filename if different.  
+- Use `ls` to confirm the file exists before moving.
+
+---
+
+## 9️⃣ Return to Project Root
+```bash
+cd ..
+cd ..
+ls
+```
+
 ----
 
 <img width="1230" height="209" alt="Screenshot 2025-11-27 141511" src="https://github.com/user-attachments/assets/ac29c4ab-4a25-4bcf-8734-25506740173f" />
