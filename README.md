@@ -1,6 +1,6 @@
 Here’s a complete **README.md** file for your **JAVA-SPRINGBOOT-PROJECT** setup. It documents all the steps you outlined in a clean, professional, and beginner-friendly way:
 
-```markdown
+
 # JAVA-SPRINGBOOT-PROJECT 🚀
 
 This project demonstrates deploying a **Java Spring Boot backend** with a **Streamlit frontend** on AWS using **RDS (MySQL)** and **EC2 instances**.
