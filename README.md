@@ -149,34 +149,21 @@ Launch **two EC2 instances**:
 1. Connect to **Backend EC2**:
    ```bash
 
-         sudo su -
-   
-         yum install git -y
-         
-         git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
-         
-         yum install maven -y
-         
-         ls
-         
-         cd Java-springboot-project
-         
-         ls
-         
-         mvn clean package -Dspring.profiles.active=build
-         ls
-         
-         cd target
-         
-         ls
-         
-         mv datastore-0.0.7.jar /root             ## move to root directory using this command :  mv <filename> /root
-
-         cd ..
-
-         cd ..
-         
-         ls
+          sudo su -
+          yum install git -y    
+          git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git   
+          yum install maven -y   
+          ls   
+          cd Java-springboot-project    
+          ls     
+          mvn clean package -Dspring.profiles.active=build       
+          ls       
+          cd target    
+          ls   
+          mv datastore-0.0.7.jar /root             ## move to root directory using this command :  mv <filename> /root
+          cd ..
+          cd ..        
+          ls
        
 
    ```
