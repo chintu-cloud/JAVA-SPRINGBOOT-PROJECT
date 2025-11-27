@@ -149,7 +149,7 @@ Launch **two EC2 instances**:
 
 ---
 
-# 🚀 Backend EC2 Setup Guide (JAVA-SPRINGBOOT-PROJECT)
+
 
 ## 1️⃣ Connect to **Backend EC2**:
 ```bash
