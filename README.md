@@ -9,13 +9,87 @@ This project demonstrates deploying a **Java Spring Boot backend** with a **Stre
 ## 📁 File Structure
  ```
 java-springboot-project/
-├── src/
-│   └── main/
-│       └── java/
-│           └── com/example/
-├── application.properties
-├── Dockerfile (optional)
-└── README.md
+.
+├── Backend-creation-process
+├── Dockerfile
+├── Dockerfile1
+├── Dockerfile2
+├── Frontend
+│   ├── app.py
+│   └── creation-process
+├── Jenkinsfile
+├── Jenkinsfile-2
+├── README.md
+├── compose
+│   ├── docker-compose-one.yaml
+│   └── docker-compose.yaml
+├── helper
+├── logs
+│   └── datastore.log
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── datastore
+│   │   │           └── person
+│   │   │               ├── DataStoreApplication.java
+│   │   │               ├── controller
+│   │   │               │   └── StudentController.java
+│   │   │               ├── pojo
+│   │   │               │   └── Student.java
+│   │   │               └── repository
+│   │   │                   └── StudentRepository.java
+│   │   └── resources
+│   │       ├── application-build.properties
+│   │       └── application.properties
+│   └── test
+│       └── java
+│           └── com
+│               └── datastore
+│                   └── person
+│                       └── DataStoreApplicationTests.java
+└── target
+    ├── classes
+    │   ├── application-build.properties
+    │   ├── application.properties
+    │   └── com
+    │       └── datastore
+    │           └── person
+    │               ├── DataStoreApplication.class
+    │               ├── controller
+    │               │   └── StudentController.class
+    │               ├── pojo
+    │               │   └── Student.class
+    │               └── repository
+    │                   └── StudentRepository.class
+    ├── datastore-0.0.7.jar
+    ├── datastore-0.0.7.jar.original
+    ├── maven-archiver
+    │   └── pom.properties
+    ├── maven-status 
+    │   └── maven-compiler-plugin
+    │       ├── compile
+    │       │   └── default-compile
+    │       │       ├── createdFiles.lst
+    │       │       └── inputFiles.lst
+    │       └── testCompile
+    │           └── default-testCompile
+    │               ├── createdFiles.lst
+    │               └── inputFiles.lst
+    ├── surefire-reports
+    │   ├── 2025-11-10T20-43-53_965.dumpstream
+    │   ├── TEST-com.datastore.person.DataStoreApplicationTests.xml
+    │   └── com.datastore.person.DataStoreApplicationTests.txt
+    └── test-classes
+        └── com
+            └── datastore 
+                └── person
+                    └── DataStoreApplicationTests.class
+
+38 directories, 40 files
  ```
 
 ---
