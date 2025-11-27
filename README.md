@@ -191,52 +191,108 @@ mv <filename> /root
 ---
 
 ## ⚙️ Step 4: Setup Frontend (Streamlit)
-1. Connect to **Frontend EC2**:
-   ```bash
-   sudo su -
-   yum install git -y
-   git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
-   cd Java-springboot-project
-   yum install python3-pip -y
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install --upgrade pip
-   pip install streamlit requests
-  ```
+Got it 👍 — let’s clean this up into a **well‑structured, beginner‑friendly format** for your documentation. I’ll annotate each step so it’s crystal clear and reproducible.
 
-2. Create **systemd service**:
+---
 
-   ```
-   vi /etc/systemd/system/frontend.service
-   ```
+# ⚙️ Step 4: Setup Frontend (Streamlit)
 
-   Add the following: (/etc/systemd/system/frontend.service --> inside enter below code)
-   ```ini
-   [Unit]
-   Description=Streamlit Frontend App
-   After=network.target
+## 1️⃣ Connect to **Frontend EC2** and install dependencies
+```bash
+# Switch to root user
+sudo su -
 
-   [Service]
-   User=root
-   WorkingDirectory=/root/Java-springboot-project/frontend
-   ExecStart=/root/Java-springboot-project/frontend/venv/bin/python -m streamlit run /root/Java-springboot-project/frontend/app.py --server.port=8501 --server.address=0.0.0.0
-   Environment=API_URL=http://<BACKEND_PRIVATE_IP>:8084
-   Restart=always
-   RestartSec=5
+# Install Git
+yum install git -y
 
-   [Install]
-   WantedBy=multi-user.target
-   ```
-<img width="1287" height="217" alt="Screenshot 2025-11-27 143519" src="https://github.com/user-attachments/assets/600208de-2dc3-4a4a-a29c-3017f3e85110" />
+# Clone project repository
+git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
 
------
-3. Reload and start service:
-   ```bash
-   systemctl daemon-reload
-   systemctl enable frontend
-   systemctl start frontend
-   systemctl status frontend
-   ```
+# Navigate into project directory
+cd Java-springboot-project
+
+# Install Python3 and pip
+yum install python3-pip -y
+
+# Create Python virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Upgrade pip
+pip install --upgrade pip
+
+# Install required Python packages
+pip install streamlit requests
+```
+
+> ✅ **Note:** Always activate the virtual environment (`source venv/bin/activate`) before installing or running Python packages.
+
+---
+
+## 2️⃣ Create **systemd service** for Streamlit
+
+Open service file:
+```bash
+vi /etc/systemd/system/frontend.service
+```
+
+Paste the following configuration:
+
+```ini
+[Unit]
+Description=Streamlit Frontend App
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/Java-springboot-project/frontend
+ExecStart=/root/Java-springboot-project/venv/bin/python -m streamlit run /root/Java-springboot-project/frontend/app.py --server.port=8501 --server.address=0.0.0.0
+Environment=API_URL=http://<BACKEND_PRIVATE_IP>:8084
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### 🔑 Key Notes:
+- **WorkingDirectory** → points to your frontend folder.  
+- **ExecStart** → must use the Python binary inside your virtual environment.  
+- **Environment** → replace `<BACKEND_PRIVATE_IP>` with the **private IP of your backend EC2**.  
+- **Restart=always** → ensures the service auto‑restarts if it crashes.  
+
+---
+
+## 3️⃣ Reload and start service
+```bash
+# Reload systemd to recognize new service
+systemctl daemon-reload
+
+# Enable service to start on boot
+systemctl enable frontend
+
+# Start service immediately
+systemctl start frontend
+
+# Check service status
+systemctl status frontend
+```
+
+---
+
+## ✅ Verification
+- Open browser → `http://<Frontend_Public_IP>:8501`  
+- You should see the **Streamlit frontend** running and connected to backend.  
+- If service fails, check logs:
+```bash
+journalctl -u frontend -f
+```
+
+---
+
+
 <img width="1374" height="259" alt="Screenshot 2025-11-27 151207" src="https://github.com/user-attachments/assets/0cb5dc6a-689e-4d03-b04e-66b7b40e14f7" />
 
 ---
