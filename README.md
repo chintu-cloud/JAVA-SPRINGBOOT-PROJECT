@@ -190,8 +190,6 @@ mv <filename> /root
 
 ---
 
-## ⚙️ Step 4: Setup Frontend (Streamlit)
-Got it 👍 — let’s clean this up into a **well‑structured, beginner‑friendly format** for your documentation. I’ll annotate each step so it’s crystal clear and reproducible.
 
 ---
 
