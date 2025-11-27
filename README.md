@@ -200,10 +200,6 @@ mv <filename> /root
    yum install python3-pip -y
    python3 -m venv venv
    source venv/bin/activate
-```
-<img width="432" height="29" alt="Screenshot 2025-11-27 143245" src="https://github.com/user-attachments/assets/60aac423-f72b-4bca-9e74-8085b7426b2b" />
-
-   ```
    pip install --upgrade pip
    pip install streamlit requests
   ```
