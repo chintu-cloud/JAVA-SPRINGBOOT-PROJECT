@@ -170,9 +170,7 @@ Launch **two EC2 instances**:
          
          ls
          
-         mv datastore-0.0.7.jar /root
- 
-                               ## move to root directory using this command :  mv <filename> /root
+         mv datastore-0.0.7.jar /root             ## move to root directory using this command :  mv <filename> /root
 
          cd ..
 
