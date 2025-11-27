@@ -1,5 +1,7 @@
-Here’s a complete **README.md** file for your **JAVA-SPRINGBOOT-PROJECT** setup. It documents all the steps you outlined in a clean, professional, and beginner-friendly way:
+Here’s a complete **README.md** file for your **JAVA-SPRINGBOOT-PROJECT** setup. 
+It documents all the steps you outlined in a clean, professional, and beginner-friendly way:
 
+<img width="1200" height="771" alt="image" src="https://github.com/user-attachments/assets/cc7a3e8a-299d-4902-b05e-a6d64de0890e" />
 
 # JAVA-SPRINGBOOT-PROJECT 🚀
 
@@ -26,12 +28,20 @@ This project demonstrates deploying a **Java Spring Boot backend** with a **Stre
    - **Public Access**: Yes  
 
 2. Click **Create Database**.
+   
+<img width="1349" height="124" alt="Screenshot 2025-11-27 134417" src="https://github.com/user-attachments/assets/671b0be9-dea5-45fb-b4ae-8e08bd62a87f" />
+<img width="1363" height="295" alt="Screenshot 2025-11-27 134540" src="https://github.com/user-attachments/assets/b19c07a8-6c6a-4e4f-ad17-8c996cfc72cb" />
+<img width="1378" height="628" alt="Screenshot 2025-11-27 134825" src="https://github.com/user-attachments/assets/ce5cbf6a-a055-4324-b4d6-5725aa694a70" />
+<img width="1338" height="117" alt="Screenshot 2025-11-27 135534" src="https://github.com/user-attachments/assets/974184fc-e8e4-4bc1-917b-1509bfbcbc0d" />
+<img width="1355" height="572" alt="Screenshot 2025-11-27 135631" src="https://github.com/user-attachments/assets/fd33bf9b-8f0e-4b88-abf9-dbbc160857c5" />
 
 ---
 
 ## ⚙️ Step 2: Launch EC2 Instances
 Launch **two EC2 instances**:
-
+###  Backend : java code run
+### Frontend : python code run
+---
 ### Backend Instance
 - Name: `Backend`  
 - Type: `t3.micro`  
@@ -68,6 +78,8 @@ Move the JAR file to the root directory using this command:
  ```
 mv <filename> /root
  ```
+<img width="1230" height="209" alt="Screenshot 2025-11-27 141511" src="https://github.com/user-attachments/assets/ac29c4ab-4a25-4bcf-8734-25506740173f" />
+
 ----
 
 - 
@@ -79,12 +91,15 @@ mv <filename> /root
    MYSQL_PASSWORD=chandan#1234 \
    nohup java -jar ./datastore-0.0.7.jar > /var/log/app/nohup.out 2>&1 &
    ```
+<img width="1882" height="160" alt="Screenshot 2025-11-27 142413" src="https://github.com/user-attachments/assets/7f7683db-1541-4022-b762-2a90cbb58769" />
+
 
 3. Verify:
    ```bash
    ps aux | grep jar
    cat /var/log/app/nohup.out
    ```
+<img width="1889" height="675" alt="Screenshot 2025-11-27 145936" src="https://github.com/user-attachments/assets/3dec9b1c-cc53-4b17-8243-acb05ff11b45" />
 
 ---
 
@@ -98,6 +113,10 @@ mv <filename> /root
    yum install python3-pip -y
    python3 -m venv venv
    source venv/bin/activate
+
+<img width="432" height="29" alt="Screenshot 2025-11-27 143245" src="https://github.com/user-attachments/assets/60aac423-f72b-4bca-9e74-8085b7426b2b" />
+
+   
    pip install --upgrade pip
    pip install streamlit requests
    ```
@@ -124,7 +143,9 @@ mv <filename> /root
    [Install]
    WantedBy=multi-user.target
    ```
+<img width="1287" height="217" alt="Screenshot 2025-11-27 143519" src="https://github.com/user-attachments/assets/600208de-2dc3-4a4a-a29c-3017f3e85110" />
 
+-----
 3. Reload and start service:
    ```bash
    systemctl daemon-reload
@@ -132,6 +153,7 @@ mv <filename> /root
    systemctl start frontend
    systemctl status frontend
    ```
+<img width="1374" height="259" alt="Screenshot 2025-11-27 151207" src="https://github.com/user-attachments/assets/0cb5dc6a-689e-4d03-b04e-66b7b40e14f7" />
 
 ---
 
@@ -150,6 +172,8 @@ http://3.235.170.36:8501
 
 ## ✅ Output
 You should now see the **Streamlit frontend** running and connected to the **Spring Boot backend** with MySQL database.
+<img width="1901" height="809" alt="Screenshot 2025-11-27 150736" src="https://github.com/user-attachments/assets/3905a144-1bd5-4a7a-836d-618578eee41e" />
+<img width="1910" height="815" alt="Screenshot 2025-11-27 150710" src="https://github.com/user-attachments/assets/0342ed28-1858-45e1-b114-f9e4cc0a66b9" />
 
 ---
 
