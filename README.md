@@ -148,7 +148,8 @@ Launch **two EC2 instances**:
 ## ⚙️ Step 3: Setup Backend (Spring Boot)
 1. Connect to **Backend EC2**:
    ```bash
-         sudo su -
+
+         sudo su -
          yum install git -y
          git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
          yum install maven -y
