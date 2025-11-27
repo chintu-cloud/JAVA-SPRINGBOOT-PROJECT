@@ -269,25 +269,77 @@ ls
 # ⚙️ Step 4: Setup Frontend (Streamlit)
 
 ## 1️⃣ Connect to **Frontend EC2** and install dependencies
+
 ```bash
-       sudo su -
-       yum install git -y
-       git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
-       ls
-       cd Java-springboot-project
-       ls
-       yum install python3-pip -y
-       python3 -m venv venv
-       source venv/bin/activate
-       pip install --upgrade pip
-       pip install streamlit requests
-          
-
+sudo su -
 ```
-
-> ✅ **Note:** Always activate the virtual environment (`source venv/bin/activate`) before installing or running Python packages.
+- Switch to root user for full permissions.  
+- ⚠️ **Reminder:** Ensure you’re on the correct EC2 instance (frontend server).
 
 ---
+
+##  Install Git
+```bash
+yum install git -y
+```
+- Installs Git for cloning repositories.  
+- `-y` auto-confirms installation.
+
+---
+
+##  Clone the Project Repository
+```bash
+git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
+```
+- Clones the Spring Boot + Streamlit project into your EC2 instance.  
+- ⚠️ **Tip:** Double-check repo URL accessibility.
+
+---
+
+##  Verify Project Directory
+```bash
+ls
+cd Java-springboot-project
+ls
+```
+- Confirms the project folder exists before entering.  
+- ⚠️ **Pitfall:** Directory name is case-sensitive (`Java-springboot-project`).
+
+---
+
+##  Install Python & Pip
+```bash
+yum install python3-pip -y
+```
+- Installs Python 3 and pip package manager.  
+- ⚠️ **Note:** Run `python3 --version` and `pip3 --version` to confirm installation.
+
+---
+
+##  Create Virtual Environment
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+- Creates and activates a Python virtual environment named `venv`.  
+- ⚠️ **Reminder:** Always activate the environment before installing dependencies.
+
+---
+
+##  Upgrade Pip
+```bash
+pip install --upgrade pip
+```
+- Ensures pip is updated to the latest version.  
+- ⚠️ **Tip:** Avoid dependency issues by keeping pip current.
+
+---
+
+##  Install Required Python Packages
+```bash
+pip install streamlit requests
+```
+
 
 ## 2️⃣ Create **systemd service** for Streamlit
 
