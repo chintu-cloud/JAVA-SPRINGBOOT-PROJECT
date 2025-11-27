@@ -1,7 +1,5 @@
-Here’s a complete **README.md** file for your **JAVA-SPRINGBOOT-PROJECT** setup. 
-It documents all the steps you outlined in a clean, professional, and beginner-friendly way:
+<img width="587" height="235" alt="Screenshot 2025-11-27 155553" src="https://github.com/user-attachments/assets/eb4d015f-fb95-4035-b6fa-925b9b0264bb" />
 
-<img width="1200" height="771" alt="image" src="https://github.com/user-attachments/assets/cc7a3e8a-299d-4902-b05e-a6d64de0890e" />
 
 # JAVA-SPRINGBOOT-PROJECT 🚀
 
