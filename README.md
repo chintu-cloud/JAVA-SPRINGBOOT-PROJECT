@@ -6,6 +6,21 @@
 This project demonstrates deploying a **Java Spring Boot backend** with a **Streamlit frontend** on AWS using **RDS (MySQL)** and **EC2 instances**.
 
 ---
+## 📁 File Structure
+ ```
+java-springboot-project/
+├── src/
+│   └── main/
+│       └── java/
+│           └── com/example/
+├── application.properties
+├── Dockerfile (optional)
+└── README.md
+ ```
+
+---
+
+
 
 ## 📌 Architecture Overview
 - **AWS RDS (MySQL)** → Database
@@ -197,4 +212,48 @@ DevOps Engineer | Full-Stack Developer | Documentation Craftsman
 
 ---
 
-Would you like me to also add a **diagram (architecture flow)** in the README so it visually shows how RDS, Backend, and Frontend connect? That would make it even more beginner-friendly and professional.
+## 🏗️ Project Architecture
+
+                ┌───────────────────────────┐
+                │         End User          │
+                │   Browser (Port 8501)     │
+                └─────────────▲─────────────┘
+                              │
+                              │ HTTP Request
+                              │
+                ┌─────────────┴─────────────┐
+                │     Frontend EC2 (t3.micro)│
+                │   Streamlit App (Python)   │
+                │   Port: 8501               │
+                └─────────────▲─────────────┘
+                              │
+                              │ REST API Calls (HTTP)
+                              │
+                ┌─────────────┴─────────────┐
+                │     Backend EC2 (t3.micro)│
+                │   Spring Boot App (Java)  │
+                │   Port: 8084              │
+                └─────────────▲─────────────┘
+                              │
+                              │ JDBC Connection
+                              │
+                ┌─────────────┴─────────────┐
+                │        AWS RDS (MySQL)    │
+                │   DB Identifier: database-1│
+                │   Port: 3306               │
+                └───────────────────────────┘
+                   
+---
+## 🎨 Architecture Overview
+  ```
+ [Web Browser]
+     ↓
+[Frontend EC2 Instance]
+     ↓
+[Backend EC2 Instance (Spring Boot)]
+     ↓
+[ROS Layer: Single A2 Deployment]
+     ↓
+[MySQL Database]
+  ```
+<img width="1024" height="443" alt="Colorful architectur" src="https://github.com/user-attachments/assets/59d01d87-dff5-4cab-8d01-f3846541fa9f" />
