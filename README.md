@@ -206,7 +206,7 @@ mv <filename> /root
    
    pip install --upgrade pip
    pip install streamlit requests
-   ```
+  
 
 2. Create **systemd service**:
    ```bash
