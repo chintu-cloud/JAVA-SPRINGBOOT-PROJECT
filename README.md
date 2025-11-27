@@ -208,7 +208,7 @@ You should now see the **Streamlit frontend** running and connected to the **Spr
 ## 🎯 Author
 Created by **Chandan Mohanty**  
 DevOps Engineer | Full-Stack Developer | Documentation Craftsman
-```
+
 
 ---
 
@@ -257,3 +257,4 @@ DevOps Engineer | Full-Stack Developer | Documentation Craftsman
 [MySQL Database]
   ```
 <img width="1024" height="443" alt="Colorful architectur" src="https://github.com/user-attachments/assets/59d01d87-dff5-4cab-8d01-f3846541fa9f" />
+```
