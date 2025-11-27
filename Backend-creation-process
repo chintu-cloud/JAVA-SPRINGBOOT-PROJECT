@@ -1,4 +1,4 @@
- sudo su -
+             sudo su -
              yum install git -y
              git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
              yum install maven -y
