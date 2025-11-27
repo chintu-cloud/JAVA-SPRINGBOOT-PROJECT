@@ -1,0 +1,59 @@
+             sudo su -
+             yum install git -y
+             git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
+             ls
+             cd Java-springboot-project
+             ls
+             yum install python3-pip -y
+             python3 -m venv venv
+             source venv/bin/activate
+             pip install --upgrade pip
+             pip install streamlit requests
+             vi /etc/systemd/system/frontend.service
+
+
+                    ## -- INSIDE GIVE --
+                        # CASE-1: if app.py is in /root home directory 
+
+                           [Unit]
+                           Description=Streamlit Frontend App
+                           After=network.target
+
+                           [Service]
+                           User=root
+                           WorkingDirectory=/root 
+                           ExecStart=/root/venv/bin/streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+                           Environment=API_URL=http://172.31.25.254:8084
+                           Restart=always
+                           RestartSec=5
+
+                           [Install]
+                           WantedBy=multi-user.target
+ 
+
+                        # CASE-2: app.py as per repo 
+
+                           [Unit]
+                           Description=Streamlit Frontend App
+                           After=network.target
+
+                           [Service]
+                           User=root
+                           WorkingDirectory=/root/Java-springboot-project/frontend
+                           ExecStart=/root/Java-springboot-project/frontend/venv/bin/python -m streamlit run /root/Java-springboot-project/frontend/app.py --server.port=8501 --   server.address=0.0.0.0
+                           Environment=API_URL=http://172.31.70.15:8084      ## give Backend private IP
+                           Restart=always
+                           RestartSec=5
+
+                           [Install]
+                           WantedBy=multi-user.target
+
+ 
+             systemctl daemon-reload
+             systemctl enable frontend
+             systemctl start frontend
+             systemctl status frontend
+
+
+     #to exit venv give exit 
+             source venv/bin/activate          # to activate
