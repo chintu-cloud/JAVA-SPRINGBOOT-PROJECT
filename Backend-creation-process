@@ -1,0 +1,28 @@
+ sudo su -
+             yum install git -y
+             git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
+             yum install maven -y
+             ls
+             cd Java-springboot-project
+             ls
+             mvn clean package -Dspring.profiles.active=build
+             ls
+             cd target
+             ls
+             mv datastore-0.0.7.jar /root
+ 
+                             ## move to root directory using this command :  mv <filename> /root
+
+             cd ..
+             cd ..
+             ls
+ 
+             MYSQL_HOST=jdbc:mysql://database-1.c6ricqgseec0.us-east-1.rds.amazonaws.com:3306/datastore?createDatabaseIfNotExist=true \
+             MYSQL_USERNAME=admin \
+             MYSQL_PASSWORD=chandan#1234 \
+             nohup java -jar ./datastore-0.0.7.jar > /var/log/app/nohup.out 2>&1 &
+ 
+                       ## enter into root dictory
+ 
+             ps aux | grep jar
+             cat /var/log/app/nohup.out
