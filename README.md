@@ -148,23 +148,29 @@ Launch **two EC2 instances**:
 ## ⚙️ Step 3: Setup Backend (Spring Boot)
 1. Connect to **Backend EC2**:
    ```bash
-   sudo su -
-   yum install git -y
-   git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
-   yum install maven -y
-   cd Java-springboot-project
-   mvn clean package -Dspring.profiles.active=build
-   cd target
-   mv datastore-0.0.7.jar /root        
+         sudo su -
+         yum install git -y
+         git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
+         yum install maven -y
+         ls
+         cd Java-springboot-project
+         ls
+         mvn clean package -Dspring.profiles.active=build
+         ls
+         cd target
+         ls
+         mv datastore-0.0.7.jar /root
+ 
+                               ## move to root directory using this command :  mv <filename> /root
+
+         cd ..
+         cd ..
+         ls
+       
 
    ```
 ----
-📌 Note:
 
-Move the JAR file to the root directory using this command:
- ```
-mv <filename> /root
- ```
 <img width="1230" height="209" alt="Screenshot 2025-11-27 141511" src="https://github.com/user-attachments/assets/ac29c4ab-4a25-4bcf-8734-25506740173f" />
 
 ----
@@ -172,6 +178,8 @@ mv <filename> /root
 - 
 
 2. Run Spring Boot JAR with MySQL connection:
+
+ ## run into root/ dictory inside
    ```bash
    MYSQL_HOST=jdbc:mysql://database-1.c6ricqgseec0.us-east-1.rds.amazonaws.com:3306/datastore?createDatabaseIfNotExist=true \
    MYSQL_USERNAME=admin \
@@ -197,32 +205,19 @@ mv <filename> /root
 
 ## 1️⃣ Connect to **Frontend EC2** and install dependencies
 ```bash
-# Switch to root user
-sudo su -
+       sudo su -
+       yum install git -y
+       git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
+       ls
+       cd Java-springboot-project
+       ls
+       yum install python3-pip -y
+       python3 -m venv venv
+       source venv/bin/activate
+       pip install --upgrade pip
+       pip install streamlit requests
+          
 
-# Install Git
-yum install git -y
-
-# Clone project repository
-git clone https://github.com/chintu-cloud/JAVA-SPRINGBOOT-PROJECT.git
-
-# Navigate into project directory
-cd Java-springboot-project
-
-# Install Python3 and pip
-yum install python3-pip -y
-
-# Create Python virtual environment
-python3 -m venv venv
-
-# Activate virtual environment
-source venv/bin/activate
-
-# Upgrade pip
-pip install --upgrade pip
-
-# Install required Python packages
-pip install streamlit requests
 ```
 
 > ✅ **Note:** Always activate the virtual environment (`source venv/bin/activate`) before installing or running Python packages.
@@ -233,7 +228,7 @@ pip install streamlit requests
 
 Open service file:
 ```bash
-vi /etc/systemd/system/frontend.service
+     vi /etc/systemd/system/frontend.service
 ```
 
 Paste the following configuration:
