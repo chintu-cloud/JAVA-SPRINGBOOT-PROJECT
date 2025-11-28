@@ -1,4 +1,5 @@
-<img width="587" height="235" alt="Screenshot 2025-11-27 155553" src="https://github.com/user-attachments/assets/eb4d015f-fb95-4035-b6fa-925b9b0264bb" />
+<img width="1061" height="211" alt="Untitled Diagram drawio (6)" src="https://github.com/user-attachments/assets/c9541dd5-01e8-4dfe-a32c-87cd1fc29834" />
+
 
 
 # JAVA-SPRINGBOOT-PROJECT 🚀
