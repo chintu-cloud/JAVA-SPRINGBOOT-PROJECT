@@ -459,15 +459,15 @@ DevOps Engineer | Full-Stack Developer | Documentation Craftsman
                               │ HTTP Request
                               │
                 ┌─────────────┴─────────────┐
-                │     Frontend EC2 (t3.micro)│
-                │   Streamlit App (Python)   │
-                │   Port: 8501               │
+                │   Frontend EC2 (t3.micro) │
+                │   Streamlit App (Python)  │
+                │   Port: 8501              │
                 └─────────────▲─────────────┘
                               │
                               │ REST API Calls (HTTP)
                               │
                 ┌─────────────┴─────────────┐
-                │     Backend EC2 (t3.micro)│
+                │   Backend EC2 (t3.micro)  │
                 │   Spring Boot App (Java)  │
                 │   Port: 8084              │
                 └─────────────▲─────────────┘
@@ -475,9 +475,9 @@ DevOps Engineer | Full-Stack Developer | Documentation Craftsman
                               │ JDBC Connection
                               │
                 ┌─────────────┴─────────────┐
-                │        AWS RDS (MySQL)    │
-                │   DB Identifier: database-1│
-                │   Port: 3306               │
+                │    AWS RDS (MySQL)        │
+                │ DB Identifier: database-1 │
+                │    Port: 3306             │
                 └───────────────────────────┘
                    
 ---
