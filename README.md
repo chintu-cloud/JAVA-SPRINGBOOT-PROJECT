@@ -18,7 +18,7 @@ This project demonstrates deploying a **Java Spring Boot backend** with a **Stre
 [MySQL Database]
 ```
 
-<img width="1061" height="240" alt="Untitled Diagram drawio (7)" src="https://github.com/user-attachments/assets/dfd27271-7b48-45c9-9073-38dc50f0a535" />
+<img width="1061" height="240" alt="Untitled Diagram drawio (6)" src="https://github.com/user-attachments/assets/7206e254-abb9-4ea1-a5f3-e75969a19b5a" />
 
 
 ---
