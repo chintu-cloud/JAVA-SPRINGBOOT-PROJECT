@@ -499,4 +499,7 @@ DevOps Engineer | Full-Stack Developer | Documentation Craftsman
                 │    Port: 3306             │
                 └───────────────────────────┘
                    
+---
+## 🏁 THE END
+This completes the deployment setup for both Backend and Frontend EC2 instances with a clear architecture view. 🎉
 
