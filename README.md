@@ -1,4 +1,19 @@
-<img width="1061" height="211" alt="Untitled Diagram drawio (6)" src="https://github.com/user-attachments/assets/c9541dd5-01e8-4dfe-a32c-87cd1fc29834" />
+---
+## 🎨 Architecture Overview
+  ```
+ [Web Browser]
+     ↓
+[Frontend EC2 Instance]
+     ↓
+[Backend EC2 Instance (Spring Boot)]
+     ↓
+[ROS Layer: Single A2 Deployment]
+     ↓
+[MySQL Database]
+  ```
+<img width="1061" height="240" alt="Untitled Diagram drawio (7)" src="https://github.com/user-attachments/assets/365fca2e-cbb7-4126-81bc-2fa2aea4d1ed" />
+
+```
 
 
 
@@ -481,18 +496,4 @@ DevOps Engineer | Full-Stack Developer | Documentation Craftsman
                 │    Port: 3306             │
                 └───────────────────────────┘
                    
----
-## 🎨 Architecture Overview
-  ```
- [Web Browser]
-     ↓
-[Frontend EC2 Instance]
-     ↓
-[Backend EC2 Instance (Spring Boot)]
-     ↓
-[ROS Layer: Single A2 Deployment]
-     ↓
-[MySQL Database]
-  ```
-<img width="1024" height="443" alt="Colorful architectur" src="https://github.com/user-attachments/assets/59d01d87-dff5-4cab-8d01-f3846541fa9f" />
-```
+
