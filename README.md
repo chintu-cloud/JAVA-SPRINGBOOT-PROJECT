@@ -1,4 +1,9 @@
 
+# 📘 JAVA-SPRINGBOOT-PROJECT Deployment Guide
+
+This project demonstrates deploying a **Java Spring Boot backend** with a **Streamlit frontend** on AWS using **RDS (MySQL)** and **EC2 instances**.
+
+---
 
 ## 🎨 Architecture Overview
 ```text
@@ -19,12 +24,6 @@
 ---
 
 
-
-# 📘 JAVA-SPRINGBOOT-PROJECT Deployment Guide
-
-This project demonstrates deploying a **Java Spring Boot backend** with a **Streamlit frontend** on AWS using **RDS (MySQL)** and **EC2 instances**.
-
----
 ## 📁 File Structure
  ```
 java-springboot-project/
