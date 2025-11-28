@@ -1,7 +1,8 @@
----
+
+
 ## 🎨 Architecture Overview
-  ```
- [Web Browser]
+```text
+[Web Browser]
      ↓
 [Frontend EC2 Instance]
      ↓
@@ -10,14 +11,16 @@
 [ROS Layer: Single A2 Deployment]
      ↓
 [MySQL Database]
-  ```
-<img width="1061" height="240" alt="Untitled Diagram drawio (7)" src="https://github.com/user-attachments/assets/365fca2e-cbb7-4126-81bc-2fa2aea4d1ed" />
-
 ```
 
+<img width="1061" height="240" alt="Untitled Diagram drawio (7)" src="https://github.com/user-attachments/assets/dfd27271-7b48-45c9-9073-38dc50f0a535" />
 
 
-# JAVA-SPRINGBOOT-PROJECT 🚀
+---
+
+
+
+# 📘 JAVA-SPRINGBOOT-PROJECT Deployment Guide
 
 This project demonstrates deploying a **Java Spring Boot backend** with a **Streamlit frontend** on AWS using **RDS (MySQL)** and **EC2 instances**.
 
