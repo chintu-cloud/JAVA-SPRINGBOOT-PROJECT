@@ -501,4 +501,144 @@ DevOps Engineer | Full-Stack Developer | Documentation Craftsman
 ---
 ## 🏁 THE END
 This completes the deployment setup for both Backend and Frontend EC2 instances with a clear architecture view. 🎉
+<img width="474" height="242" alt="image" src="https://github.com/user-attachments/assets/e52dc863-f675-4d36-b896-155e9806554e" />
+
+
+## 🖥️ GitHub Actions :: Workflow
+
+
+# 🚀 CI/CD Pipeline Configuration Guide
+
+This repository contains a **GitHub Actions workflow** that automates the build and deployment process for the **Datastore Application**.  
+It ensures smooth integration, testing, and deployment to your **AWS EC2 instance** with SonarQube analysis for code quality.
+
+---
+
+## 📋 Overview
+
+The pipeline performs the following steps:
+1. ✅ Checkout source code  
+2. ☕ Setup Java 17  
+3. 🔍 Run SonarQube analysis  
+4. 📦 Build JAR file  
+5. 📤 Upload JAR to EC2  
+6. ⛔ Stop existing application  
+7. 🚀 Deploy and run new application on EC2  
+
+---
+
+## 🔑 Required GitHub Secrets
+
+GitHub Secrets are sensitive values that must be configured in your repository settings.  
+Navigate to **Settings → Secrets and variables → Actions** to add these secrets.
+
+### 1. `SONAR_TOKEN`
+- **Description**: Authentication token for SonarQube analysis  
+- **How to get it**:  
+  - Log in to your SonarQube server  
+  - Go to **My Account → Security → Tokens**  
+  - Generate a new token (e.g., `GitHub-Actions`)  
+  - Copy the token value  
+- **Example**:  
+  ```text
+  squ_1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p
+  ```
+- **Used in**: SonarQube Scan step  
+
+### 2. `SONAR_URL`
+- **Description**: URL of your SonarQube server instance  
+- **Format**:  
+  - `http://publicip:9000`  
+  - `https://your-sonarqube-domain.com`  
+- **Example**:  
+  ```text
+  http://publicip:9000
+  ```
+- **Used in**: SonarQube Scan step  
+
+### 3. `EC2_HOST`
+- **Description**: Public IP or hostname of your EC2 instance  
+- **Example**:  
+  ```text
+  ec2-12-34-56-78.compute-1.amazonaws.com
+  ```
+
+### 4. `EC2_KEY`
+- **Description**: The entire content of your `.pem` file used for SSH authentication  
+- **Important**: Preserve line breaks when pasting into GitHub Secrets  
+
+---
+
+## ⚙️ Step-by-Step Configuration
+
+### Step 1: Add SonarQube Secrets
+1. Go to your GitHub repository  
+2. Click **Settings → Secrets and variables → Actions**  
+3. Click **New repository secret**  
+4. Add `SONAR_TOKEN`:  
+   - Name: `SONAR_TOKEN`  
+   - Value: Your SonarQube token  
+5. Add `SONAR_URL`:  
+   - Name: `SONAR_URL`  
+   - Value: Your SonarQube URL (e.g., `https://sonar.example.com`)  
+
+### Step 2: Add EC2 Secrets
+1. Click **New repository secret**  
+2. Add `EC2_HOST`:  
+   - Name: `EC2_HOST`  
+   - Value: Your EC2 public IP or hostname  
+3. Add `EC2_KEY`:  
+   - Name: `EC2_KEY`  
+   - Value: The entire content of your `.pem` file  
+
+### Step 3: Update Database Configuration
+1. Open `main.yaml` in the repository  
+2. Find the **Run Application on EC2** step  
+3. Update the database connection string with your **RDS details**  
+4. Commit and push the changes  
+
+---
+
+## ✅ Verifying the Configuration
+
+### Test SonarQube Connection
+Push a commit to the `main` branch and check the workflow logs:  
+- Go to **Actions** tab  
+- Click on the latest workflow run  
+- Look for the **Sonar Scan** step  
+- Verify it completes without authentication errors  
+
+### Test EC2 Connection
+Check the workflow logs for:  
+- **Upload JAR to EC2** step should complete successfully  
+- **Run Application on EC2** step should show `🚀 New Application Started`  
+
+---
+
+## 🛠️ Troubleshooting
+
+If there are connection errors:  
+- Verify `EC2_HOST` is correct and reachable  
+- Verify `EC2_KEY` is properly formatted with line breaks preserved  
+- Ensure EC2 security group allows inbound **SSH (port 22)**  
+- Ensure database RDS security group allows inbound traffic on **port 3306**  
+
+---
+
+## 📚 Notes
+
+- Keep secrets updated and rotate them regularly for security.  
+- Ensure your EC2 instance has **Java 17** installed.  
+- Logs in the **Actions tab** are your best friend for debugging.  
+
+---
+
+## 🎯 Conclusion
+
+This CI/CD pipeline ensures **automated builds, code quality checks, and deployments** to AWS EC2.  
+With proper secrets and configuration, you’ll have a **production-ready workflow** that’s secure and efficient.
+```
+
+
+
 
