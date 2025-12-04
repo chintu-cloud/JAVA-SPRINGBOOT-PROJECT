@@ -3,7 +3,7 @@ FROM amazoncorretto:11-alpine-jdk AS builder
 WORKDIR /app/source
 COPY . .
 RUN chmod +x mvnw
-RUN ./mvnw clean package -Dspring.profiles.active=build -DskipTests
+RUN sh ./mvnw clean package -Dspring.profiles.active=build -DskipTests
 
 #stage-2
 FROM amazoncorretto:11-alpine-jdk
